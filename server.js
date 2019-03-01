@@ -6,6 +6,8 @@ require('./hbs/helpers/helpers')
     //las vistas parciales
 hbs.registerPartials(__dirname + '/views/partials');
 
+const port = process.env.PORT || 3000;
+
 
 //levantar un html
 //indico que los archivos en el directorio public van a poder ser accedidos
@@ -31,6 +33,6 @@ app.get('/about', function(req, res) {
     res.render('about');
 });
 
-app.listen(3000, () => {
-    console.log("Escuchando peticiones en el puerto 3000");
-})
+app.listen(port, () => {
+    console.log(`Escuchando peticiones en el puerto ${port}`);
+});
